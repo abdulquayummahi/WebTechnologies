@@ -27,5 +27,5 @@ root
 ├── 📁 tasks           # Weekly tasks and theory implementations
 ├── 📁 labs            # In-class lab work and experiments
 ├── 📁 projects        # Major semester projects (Final/Midterm)
-├── 📄 index.html      # Landing page for the repo
+├── 📄 index.html      # Landing page for the repo for each task
 └── 📄 README.md       # Documentation
