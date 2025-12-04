@@ -24,7 +24,7 @@ The code is organized by functionality and assignment type:
 
 ```text
 root
-├── 📁 assignments     # Weekly tasks and theory implementations
+├── 📁 tasks           # Weekly tasks and theory implementations
 ├── 📁 labs            # In-class lab work and experiments
 ├── 📁 projects        # Major semester projects (Final/Midterm)
 ├── 📄 index.html      # Landing page for the repo
