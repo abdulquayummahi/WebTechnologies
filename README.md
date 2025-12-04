@@ -29,3 +29,30 @@ root
 ├── 📁 projects        # Major semester projects (Final/Midterm)
 ├── 📄 index.html      # Landing page for the repo
 └── 📄 README.md       # Documentation
+
+---
+
+## 🖥️ Usage
+
+* **View Projects:** Simply open the `.html` files in any web browser (Chrome, Firefox, Edge).
+* **Navigation:** Start with `index.html` to see the main menu.
+
+---
+
+## 🌟 Key Features
+
+* **Responsive Design:** layouts adapt to mobile and desktop screens.
+* **Clean Code:** commented and organized for readability.
+* **No Frameworks:** (Optional) Pure HTML/CSS for core understanding.
+
+---
+
+## 👤 Author
+
+**[Your Name]**
+* **ID:** [Your ID]
+* **Course:** Web Technologies
+* **University:** [University Name]
+
+---
+*© 2024 | Built for educational purposes.*
