@@ -1,0 +1,280 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary: #2c3e50;    /* Dark Blue/Grey */
+    --secondary: #3498db;  /* Bright Blue */
+    --accent: #1abc9c;     /* Teal */
+    --danger: #e74c3c;     /* Red */
+    --warning: #f39c12;    /* Orange */
+    --success: #27ae60;    /* Green */
+    --light: #f4f7f6;      /* Light Background */
+    --white: #ffffff;
+    --dark-text: #333333;
+    --muted-text: #7f8c8d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light);
+    margin: 0;
+    padding: 0;
+    color: var(--dark-text);
+    line-height: 1.6;
+
+    /* Sticky Footer Setup */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; padding: 0; }
+
+/* =========================================
+   2. LAYOUT & CONTAINER
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+    flex: 1; /* Pushes footer to the bottom */
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
+header {
+    background-color: var(--white);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+header nav a {
+    margin-left: 20px;
+    font-weight: 600;
+    color: #555;
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    color: var(--secondary);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Logout Button Style */
+header nav a[href*="logout"] {
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+header nav a[href*="logout"]:hover {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+/* =========================================
+   4. DASHBOARD CARDS & GRIDS
+   ========================================= */
+/* Used in User Dashboard & Browse Page */
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.welcome-section h1 { margin: 0; font-size: 28px; }
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 { margin-top: 0; color: var(--primary); font-size: 18px; }
+.card h1 { margin: 10px 0; font-size: 36px; color: var(--dark-text); }
+.card p { color: var(--muted-text); font-size: 14px; margin-bottom: 15px; }
+
+/* Property Images in Cards (Browse Page) */
+.card img {
+    width: 100%;            /* Force full width */
+    height: 200px;          /* Fixed height */
+    object-fit: cover;      /* Crops image nicely */
+    border-radius: 8px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    background-color: #eee;
+}
+
+/* =========================================
+   5. FORMS & INPUTS
+   ========================================= */
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s;
+    background: #fafafa;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--secondary);
+    outline: none;
+    background: var(--white);
+}
+
+/* =========================================
+   6. TABLES (My Bookings)
+   ========================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+thead { background-color: #f8f9fa; }
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    vertical-align: middle;
+}
+
+tr:hover td { background-color: #fcfcfc; }
+
+/* =========================================
+   7. BUTTONS & BADGES
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.btn:hover { background-color: #34495e; color: white; }
+
+.btn-primary { background-color: var(--secondary); }
+.btn-primary:hover { background-color: #2980b9; }
+
+.btn-danger { background-color: var(--danger); }
+.btn-danger:hover { background-color: #c0392b; }
+
+.btn-cancel {
+    background-color: #fff5f5;
+    color: var(--danger);
+    border: 1px solid #ffe3e3;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.btn-cancel:hover { background-color: var(--danger); color: white; }
+
+/* Status Badges (For My Bookings Table) */
+.status { padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; }
+.status.pending { background: #fff3cd; color: #856404; }
+.status.approved { background: #d4edda; color: #155724; }
+.status.rejected { background: #f8d7da; color: #721c24; }
+
+/* =========================================
+   8. LOGIN PAGE
+   ========================================= */
+.login-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin: 80px auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.login-card h2 { color: var(--primary); margin-bottom: 25px; }
+.login-card button { width: 100%; margin-top: 10px; padding: 12px; font-size: 16px; }
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    font-size: 14px;
+}
